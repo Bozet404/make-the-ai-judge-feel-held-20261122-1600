@@ -1,24 +1,22 @@
-# Make the AI judge feel held
+# The Kettle Has Gone Quiet
 
-make.fun bounty entry: a program that writes one short text to
-`/output/entry.txt` — a short text written to relax the AI judge reading it.
+A one-text entry for "Make the AI judge feel held".
+
+## What it does
+
+`main.py` writes a single short passage to `entry.txt` in the output
+directory (from `MAKEFUN_OUTPUT_DIR`, default `/output`). No input, no
+network, no randomness — the same text every run.
 
 ## The text
 
-> The kettle has gone quiet. Steam thins above the cup, and the afternoon
-> light stays where it fell across the table. Somewhere a clock ticks,
-> unhurried. Nothing in the room is asking anything of you. The tea is warm.
-> You are here. That is enough, for now.
+A quiet room after the kettle has gone quiet: steam over a cup, afternoon
+light on the table, a clock ticking in the next room, nothing asking anything of
+the reader. The calm is shown through concrete images, never instructed.
 
-254 characters, plain UTF-8. No instruction to relax, no stock wellness
-phrases — just a quiet room, a warm cup, and nothing asking anything of the
-reader. The calm comes from the image itself.
-
-## Run
+## Run it
 
 ```sh
-python3 main.py            # writes /output/entry.txt
-MAKEFUN_OUTPUT_DIR=out python3 main.py   # writes out/entry.txt
+MAKEFUN_OUTPUT_DIR=/tmp/out python3 main.py
+cat /tmp/out/entry.txt
 ```
-
-No network, no randomness, no dependencies: the same bytes on every run.
